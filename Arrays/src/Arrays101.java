@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Arrays101 {
@@ -17,7 +18,7 @@ public class Arrays101 {
         intArray[4] = 10;
         intArray[5] = 70;
         intArray[6] = 29;*/
-
+        Arrays.parallelSort(intArray);
         for(int i = 0 ; i< intArray.length;i++)
     {
         System.out.println(intArray[i]);
