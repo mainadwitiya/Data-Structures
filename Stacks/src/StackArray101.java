@@ -67,7 +67,6 @@ class arrayStack
     }
 }
 
-/*  Class StackImplement  */
 public class StackArray101
 {
     public static void main(String[] args)
@@ -76,9 +75,9 @@ public class StackArray101
         System.out.println("Stack Test\n");
         System.out.println("Enter Size of Integer Stack ");
         int n = scan.nextInt();
-        /* Creating object of class arrayStack */
+      
         arrayStack stk = new arrayStack(n);
-        /* Perform Stack Operations */
+      
         char ch;
         do{
             System.out.println("\nStack Operations");
@@ -99,7 +98,7 @@ public class StackArray101
                     }
                     catch (Exception e)
                     {
-                        System.out.println("Error : " + e.getMessage());
+                        System.out.println("ooops : " + e.getMessage());
                     }
                     break;
                 case 2 :
@@ -109,33 +108,33 @@ public class StackArray101
                     }
                     catch (Exception e)
                     {
-                        System.out.println("Error : " + e.getMessage());
+                        System.out.println("oops : " + e.getMessage());
                     }
                     break;
                 case 3 :
                     try
                     {
-                        System.out.println("Peek Element = " + stk.peek());
+                        System.out.println("Peek Element is = " + stk.peek());
                     }
                     catch (Exception e)
                     {
-                        System.out.println("Error : " + e.getMessage());
+                        System.out.println("oops : " + e.getMessage());
                     }
                     break;
                 case 4 :
-                    System.out.println("Empty status = " + stk.isEmpty());
+                    System.out.println("is Stack Empty = " + stk.isEmpty());
                     break;
                 case 5 :
-                    System.out.println("Full status = " + stk.isFull());
+                    System.out.println("iS stack full = " + stk.isFull());
                     break;
                 case 6 :
-                    System.out.println("Size = " + stk.getSize());
+                    System.out.println("What size? this size = " + stk.getSize());
                     break;
                 default :
-                    System.out.println("Wrong Entry \n ");
+                    System.out.println("No input boi\n ");
                     break;
             }
-            /* display stack */
+            
             stk.display();
             System.out.println("\nDo you want to continue (Type y or n) \n");
             ch = scan.next().charAt(0);
