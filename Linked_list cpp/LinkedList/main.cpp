@@ -180,6 +180,27 @@ public:
 
     }
     }
+    //MAKE A LOOP
+    void makeloop(int k)
+    {
+        node* pointer_node =head;
+        int count=1;
+        while(count<k)
+        {
+            pointer_node=pointer_node->next;
+            count++;
+        }
+
+        node joining_point=pointer_node;
+
+        while(pointer_node->next!=NULL)
+        {
+            pointer_node=pointer_node->next;
+        }
+        pointer_node->next=joining_point;
+    }
+
+
 
 
 
