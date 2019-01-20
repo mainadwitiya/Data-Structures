@@ -12,6 +12,12 @@ public class Sorting101Bubble {
             for(int j =0 ; j < lastUnsortedArray ;j++){
                if(intAraay[j] > intAraay[j+1]) {
                    swap(intAraay,j,j+1);
+			
+		for(int i=0;i<intAraay.length; i++)
+			
+		{
+				System.out.print(intAraay[i]+ " ");
+			}
                }
             }
         }
