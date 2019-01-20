@@ -154,6 +154,35 @@ public:
 
     }
 
+    void remove_the_duplicates()
+    {
+        node* pointer_node =head;
+        node* secondary_pointer_node = NULL;
+        node* duplicate_node =NULL;
+            while(pointer_node!=NULL)
+            {
+                secondary_pointer_node=pointer_node;
+                while(secondary_pointer_node->next!=NULL)
+                {
+
+                if(pointer_node->data==secondary_pointer_node->next->data)
+                {
+                    duplicate_node=secondary_pointer_node->next;
+                    secondary_pointer_node->next=secondary_pointer_node->next->next;
+                    delete duplicate_node;
+                }
+                else
+                {
+                    secondary_pointer_node=secondary_pointer_node->next;
+                }
+            }
+            pointer_node=pointer_node->next;
+
+    }
+    }
+
+
+
 };
 
 int main()
@@ -168,13 +197,16 @@ int main()
         object.insert_node_at_beg(data);
     }
     object.display();
-    cout<<"Display again"<<endl;
-    object.reversing();
+    //cout<<"Display again"<<endl;
+
+    // object.reversing();
+    //USE THIS FUNCTION FOR REVERSING
+    //object.display();
+   // int k;
+    //cin>>k;
+    //object.reverse_after_k_elements(k);
+    //THE ABOVE METHOD IS USE TO REVERSE AFTER K ELEMENTS
+    object.remove_the_duplicates();
     object.display();
-    int k;
-    cin>>k;
-    object.reverse_after_k_elements(k);
-    object.display();
-    object.getsize();
     return 0;
 }
