@@ -13,11 +13,7 @@ public class Sorting101Bubble {
                if(intAraay[j] > intAraay[j+1]) {
                    swap(intAraay,j,j+1);
 			
-		for(int i=0;i<intAraay.length; i++)
-			
-		{
-				System.out.print(intAraay[i]+ " ");
-			}
+		
                }
             }
         }
