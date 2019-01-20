@@ -97,11 +97,44 @@ public:
         }
        head=prev;
 
+
     }
 
 
     //reverse the first k elements of a linked list
+    void reverse_after_k_elements(int k)
+    {
 
+        node* temp=head;
+        int count =1;
+        while(count<k)
+        {
+            temp=temp->next;
+            count++;
+        }
+        node* break_point = temp->next;
+        temp->next=NULL;
+        node* curr=head;
+        node* prev=NULL;
+        node* next=NULL;
+        while(curr!=NULL)
+        {
+           next=curr->next;
+           curr->next=prev;
+           prev=curr;
+           curr=next;
+        }
+        head=prev;
+        curr=head;
+
+        while(curr->next!=NULL)
+        {
+            curr=curr->next;
+        }
+        curr->next=break_point;
+
+
+    }
 
 };
 
@@ -119,6 +152,10 @@ int main()
     object.display();
     cout<<"Display again"<<endl;
     object.reversing();
+    object.display();
+    int k;
+    cin>>k;
+    object.reverse_after_k_elements(k);
     object.display();
     return 0;
 }
