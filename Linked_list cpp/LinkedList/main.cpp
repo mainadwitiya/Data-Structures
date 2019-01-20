@@ -151,8 +151,8 @@ public:
             counter++;
         }
         cout<<"No of elements"<<counter;
-
     }
+
 
     void remove_the_duplicates()
     {
@@ -191,7 +191,7 @@ public:
             count++;
         }
 
-        node joining_point=pointer_node;
+        node* joining_point=pointer_node;
 
         while(pointer_node->next!=NULL)
         {
@@ -200,6 +200,34 @@ public:
         pointer_node->next=joining_point;
     }
 
+
+
+    void del_at_givenkey(int key)
+    {
+        node* pointer_node = head;
+        node* prev;
+
+        if(pointer_node!=NULL && pointer_node->data==key)
+        {
+            head=pointer_node->next;
+            free(pointer_node);
+            return;
+        }
+        while(pointer_node!=NULL && pointer_node->data!=key)
+        {
+            prev=pointer_node;
+            pointer_node=pointer_node->next;
+        }
+        if(pointer_node==NULL)
+        {
+            cout<<"ELEMENT NOT FOUND";
+            return;
+        }
+        prev->next=pointer_node->next;
+        free(pointer_node);
+
+
+    }
 
 
 
@@ -223,11 +251,12 @@ int main()
     // object.reversing();
     //USE THIS FUNCTION FOR REVERSING
     //object.display();
-   // int k;
-    //cin>>k;
+    int k;
+    cin>>k;
+    object.del_at_givenkey(k);
     //object.reverse_after_k_elements(k);
     //THE ABOVE METHOD IS USE TO REVERSE AFTER K ELEMENTS
-    object.remove_the_duplicates();
+    //object.remove_the_duplicates();
     object.display();
     return 0;
 }
