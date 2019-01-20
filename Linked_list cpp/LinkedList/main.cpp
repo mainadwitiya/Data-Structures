@@ -229,6 +229,32 @@ public:
 
     }
 
+    void delete_at_start()
+    {
+        node*temp =head;
+        head=head->next;
+        free(temp);
+    }
+
+    void delete_at_end()
+    {
+        node* temp=head;
+        node* prev;
+        if(head==NULL)
+        {
+            cout<<"EmptyList";
+            return;
+        }
+        while(temp->next!=NULL)
+        {
+            prev=temp;
+            temp=temp->next;
+        }
+        free(temp);
+        prev->next=NULL;
+
+
+    }
 
 
 
@@ -257,6 +283,11 @@ int main()
     //object.reverse_after_k_elements(k);
     //THE ABOVE METHOD IS USE TO REVERSE AFTER K ELEMENTS
     //object.remove_the_duplicates();
+    object.display();
+    //object.delete_at_start();
+    //object.display();
+
+    object.delete_at_end();
     object.display();
     return 0;
 }
