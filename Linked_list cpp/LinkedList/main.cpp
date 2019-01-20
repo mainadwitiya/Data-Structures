@@ -135,6 +135,24 @@ public:
 
 
     }
+    /*IF in the main function size is not provide
+    this can be helpful*/
+    void getsize()
+    {
+        if(head==NULL)
+        {
+            cout<<"NO ELEMENT";
+        }
+        int counter=0;
+        node* ptr=head;
+        while(ptr!=NULL)
+        {
+            ptr=ptr->next;
+            counter++;
+        }
+        cout<<"No of elements"<<counter;
+
+    }
 
 };
 
@@ -157,5 +175,6 @@ int main()
     cin>>k;
     object.reverse_after_k_elements(k);
     object.display();
+    object.getsize();
     return 0;
 }
