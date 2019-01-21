@@ -1,4 +1,5 @@
     #include <iostream>
+    #include <stdlib.h>
 
     using namespace std;
 
@@ -59,7 +60,28 @@
              inorder(ptr->right);
          }
      }
+     void preorder(node* ptr)
 
+     {
+
+         if(ptr!=NULL)
+         {
+             cout<<ptr->data<<" ";
+             preorder(ptr->left);
+             preorder(ptr->right);
+         }
+     }
+
+     void postorder(node* ptr)
+     {
+
+         if(ptr!=NULL)
+         {
+            postorder(ptr->left);
+            postorder(ptr->right);
+            cout<<ptr->data<<" ";
+         }
+     }
 
 
 
@@ -83,7 +105,12 @@
            obj.insertElement(obj.root,data);
 
        }
+       cout<<"inorder"<<endl;
        obj.inorder(obj.root);
+        cout<<"preorder"<<endl;
+       obj.preorder(obj.root);
+        cout<<"postorder"<<endl;
+       obj.postorder(obj.root);
 
         return 0;
     }
