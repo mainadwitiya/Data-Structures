@@ -83,6 +83,29 @@
          }
      }
 
+     void print_between_a_range(node* root, int k1,int k2)
+     {
+         if(NULL==root)
+         {
+             return;
+         }
+
+         if(k1<root->data)
+         {
+
+             print_between_a_range(root->left,k1,k2);
+
+         }
+         if(k1<=root->data && k2>=root->data)
+         {
+             cout<<root->data<<" ";
+         }
+         if(k2>root->data)
+         {
+             print_between_a_range(root->right,k1,k2);
+         }
+     }
+
 
 
     };
@@ -107,10 +130,17 @@
        }
        cout<<"inorder"<<endl;
        obj.inorder(obj.root);
-        cout<<"preorder"<<endl;
+        cout<<endl<<"preorder"<<endl;
        obj.preorder(obj.root);
-        cout<<"postorder"<<endl;
+
+        cout<<endl<<"postorder"<<endl;
        obj.postorder(obj.root);
+        cout<<endl;
+       int k1,k2;
+       cin>>k1>>k2;
+       cout<<endl<<"ELEMENTS BETWEEN THE GIVEN RANGE ARE"<<endl;
+
+       obj.print_between_a_range(obj.root,k1,k2);
 
         return 0;
     }
