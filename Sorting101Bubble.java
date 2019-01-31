@@ -17,10 +17,7 @@ public class Sorting101Bubble {
                }
             }
         }
-        for (int  i = 0 ; i < intAraay.length ; i++)
-        {
-            System.out.println(intAraay[i]);
-        }
+        
 
     }
     public static void swap( int[] array , int i ,int j){
