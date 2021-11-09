@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #Author AD
 
-class Node():
+class BT():
     def __init__(self,data):
         self.left=None
         self.data=data
@@ -18,15 +18,44 @@ class Node():
                 return self.left.insert_data(data)
 
             else:
-                self.left = Node(data)
+                self.left = BT(data)
                 return True
         else:
             if self.right:
                 return self.right.insert_data(data)
             else:
-                self.right = Node(data)
+                self.right = BT(data)
                 return True
 
+
+    '''
+    Traversals
+    '''
+    def preorder(self):
+        print(self.data)
+        if self.left:
+            self.left.preorder()
+        if self.right:
+            self.right.preorder()
+
+
+    def postorder(self):
+        
+        if self.left:
+            self.left.preorder()
+        if self.right:
+            self.right.preorder()
+        print(self.data)
+
+    
+    def inorder(self):
+        
+        if self.left:
+            self.left.preorder()
+        print(self.data)
+        if self.right:
+            self.right.preorder()
+        
 
 
     def display(self):
@@ -37,8 +66,21 @@ class Node():
             self.right.display()
 
 
-object=Node(10)
+    # #max value
+    # def max_value_tree(self,node):
+    #     current = node
+    #     while (current.right is not None):
+    #         current = current.right
+    #     return current
+
+object=BT(10)
 object.insert_data(24)
 object.insert_data(8)
 object.insert_data(35)
-object.display()
+object.preorder()
+
+print('pos order')
+object.postorder()
+
+print('inorder')
+object.inorder()
