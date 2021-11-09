@@ -56,7 +56,20 @@ class BT():
         if self.right:
             self.right.preorder()
         
-
+    '''
+    Searching the value
+    '''
+    def search(self,value):
+        if value < self.data:
+            if self.left is None:
+                return str(value)+ ' is not found'
+            return self.left.search(value)
+        elif value > self.data:
+            if self.right is None:
+                return str(value)+ ' is not found'
+            return self.right.search(value)
+        else:
+            return str(self.data)+ ' is found'
 
     def display(self):
         if self.left:
@@ -84,3 +97,12 @@ object.postorder()
 
 print('inorder')
 object.inorder()
+
+
+print('search query')
+res = object.search(35)
+print(res)
+
+print('search query')
+res = object.search(97)
+print(res)
